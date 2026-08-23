@@ -47,9 +47,18 @@
           <span>误差不会超过五分钟。<button id="verifyButton" type="button">看看准不准</button></span>
         </div>
       </div>
-      <div class="desk-art" aria-hidden="true">
-        <div class="paper"><span>MAKE<br />TODAY<br /><b>COUNT.</b></span><i></i><i></i><i></i></div>
+      <div class="desk-art" id="deskArt">
+        <div class="paper art-book" id="artBook">
+          <button class="book-front" id="artBookButton" type="button" aria-expanded="false" aria-label="打开纸页查看阡陌的画">
+            <span>MAKE<br />TODAY<br /><b>COUNT.</b></span><i></i><i></i><i></i><small>轻触翻开</small>
+          </button>
+          <div class="book-inside">
+            <img src="assets/qianmo-artwork.jpg" alt="阡陌创作的山水与人物主题画作" />
+            <span>QIANMO · ORIGINAL</span>
+          </div>
+        </div>
         <div class="pen"></div><div class="clip"></div><div class="note">今天也<br />有在前进</div>
+        <p class="art-hint">点击纸页，或将鼠标移到这里</p>
       </div>
       <button class="next-page" data-next="products" type="button"><span>看看本周新品</span><i>↓</i></button>
       <p class="scroll-hint">滚动鼠标 · 一页一页探索</p>
@@ -60,33 +69,54 @@
         <div><p class="eyebrow"><i></i>02 / WEEKLY DROP</p><h2>这周，给书桌<br /><em>换一点新鲜感。</em></h2></div>
         <p>不只是工具，也是你学习状态的一部分。<br />为高频使用与随手出片而设计。</p>
       </div>
-      <div class="product-grid">
-        <article class="product-card lilac">
+      <div class="product-book">
+        <button class="book-arrow prev-product" type="button" aria-label="上一件商品">←</button>
+        <div class="product-grid" aria-live="polite">
+        <article class="product-card lilac active" data-product="0">
           <div class="card-top"><span>01</span><button class="heart" type="button" aria-label="收藏雾紫速写套装">♡</button></div>
           <div class="pen-set" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="product-info"><div><small>雾紫速写套装</small><h3>不费力，也能写得漂亮</h3></div><strong>¥29.9</strong></div>
         </article>
-        <article class="product-card mint">
+        <article class="product-card mint" data-product="1" aria-hidden="true">
           <div class="card-top"><span>02 / 人气</span><button class="heart" type="button" aria-label="收藏透明计划本">♡</button></div>
           <div class="book" aria-hidden="true"><i></i><b>MAKE<br />TODAY<br />COUNT.</b></div>
           <div class="product-info"><div><small>透明计划本</small><h3>把大目标，拆成今天这一格</h3></div><strong>¥36.0</strong></div>
         </article>
-        <article class="product-card peach">
+        <article class="product-card peach" data-product="2" aria-hidden="true">
           <div class="card-top"><span>03</span><button class="heart" type="button" aria-label="收藏情绪便利贴">♡</button></div>
           <div class="notes" aria-hidden="true"><i>今天也<br />有在前进</i><i>别忘了<br />休息</i><i>IDEA!</i></div>
           <div class="product-info"><div><small>情绪便利贴</small><h3>把灵感贴在看得见的地方</h3></div><strong>¥16.8</strong></div>
         </article>
+        <article class="product-card forest" data-product="3" aria-hidden="true">
+          <div class="card-top"><span>04 / NEW</span><button class="heart" type="button" aria-label="收藏双层文具盒">♡</button></div>
+          <div class="pencil-case" aria-hidden="true"></div>
+          <div class="product-info"><div><small>双层收纳文具盒</small><h3>把一桌灵感，轻松装进口袋</h3></div><strong>¥42.0</strong></div>
+        </article>
+        </div>
+        <button class="book-arrow next-product" type="button" aria-label="下一件商品">→</button>
       </div>
+      <div class="book-pagination" aria-label="商品书页"><button class="active" data-product-go="0">01<span>笔</span></button><button data-product-go="1">02<span>计划本</span></button><button data-product-go="2">03<span>便利贴</span></button><button data-product-go="3">04<span>文具盒</span></button></div>
       <button class="next-page dark" data-next="surprise" type="button"><span>领取今日惊喜</span><i>↓</i></button>
     </section>
 
     <section class="page surprise" id="surprise" data-page-name="surprise">
-      <p class="eyebrow"><i></i>03 / A LITTLE SURPRISE</p>
-      <div class="surprise-copy">
-        <h2>认真学习之外，<br />也给生活留一点<em>随机掉落。</em></h2>
-        <p>点开右边的球，会随机收到一句今日签。我们相信：一件顺手的文具，加上一点被照顾的心情，足以让开始变得容易。</p>
+      <div class="word-intro">
+        <p class="eyebrow"><i></i>03 / WRITE YOUR FEELING</p>
+        <h2>写下一个词，<br />收下一句让你<em>心动的话。</em></h2>
+        <p>你最喜欢什么文具？写下答案，让它替你说一句心里话。</p>
       </div>
-      <button class="orb" id="surpriseOrb" type="button"><span>点我</span><small>收下一点偶然</small></button>
+      <form class="word-form" id="wordForm">
+        <label for="stationeryWord">你最喜欢什么文具？</label>
+        <div class="input-row"><input id="stationeryWord" maxlength="12" autocomplete="off" placeholder="例如：钢笔" /><button type="submit">写给我 ↗</button></div>
+        <div class="word-chips" aria-label="推荐词语">
+          <button type="button" data-word="钢笔">钢笔</button><button type="button" data-word="铅笔">铅笔</button><button type="button" data-word="书本">书本</button><button type="button" data-word="图书">图书</button><button type="button" data-word="文具盒">文具盒</button>
+        </div>
+      </form>
+      <div class="copy-result" id="copyResult">
+        <small>YOUR SENTENCE</small>
+        <p id="generatedCopy">“真正适合你的文具，不只帮你写下答案，也会陪你慢慢成为答案。”</p>
+        <button type="button" id="randomCopy">换一个词</button>
+      </div>
       <button class="next-page" data-next="about" type="button"><span>认识我们</span><i>↓</i></button>
     </section>
 
