@@ -35,12 +35,13 @@
   <main>
     <section class="page cover-page" id="cover" data-page-name="cover" aria-label="网站封面">
       <img class="cover-image" src="assets/cover-art.jpg" alt="阡陌创作的山水、人物与文具组合画面" />
-      <button class="cover-enter" data-next="home" type="button" aria-label="进入片刻文具局">
-        <i>→</i><span>进入网站</span>
+      <button class="cover-notebook" id="coverNotebook" data-next="home" type="button" aria-label="点击或滑动笔记本，进入片刻文具夹">
+        <span>点击或滑动笔记</span><i>→</i>
       </button>
     </section>
 
-    <section class="page hero" id="home" data-page-name="home">
+    <section class="page site-deck" id="siteDeck" data-page-name="deck" aria-label="片刻文具夹四个小页">
+    <section class="deck-page hero active" id="home" data-page-name="home" aria-hidden="false">
       <div class="hero-copy">
         <p class="eyebrow"><i></i>STUDY IN YOUR OWN COLOR</p>
         <h1>先别急着学习，<br /><em>让我猜猜你几点来的。</em></h1>
@@ -62,7 +63,7 @@
       <p class="scroll-hint">滚动鼠标 · 一页一页探索</p>
     </section>
 
-    <section class="page products" id="products" data-page-name="products">
+    <section class="deck-page products" id="products" data-page-name="products" aria-hidden="true">
       <div class="products-head">
         <div><p class="eyebrow"><i></i>02 / WEEKLY DROP</p><h2>这周，给书桌<br /><em>换一点新鲜感。</em></h2></div>
         <p>不只是工具，也是你学习状态的一部分。<br />为高频使用与随手出片而设计。</p>
@@ -101,7 +102,7 @@
       <button class="next-page dark" data-next="surprise" type="button"><span>领取今日惊喜</span><i>↓</i></button>
     </section>
 
-    <section class="page surprise" id="surprise" data-page-name="surprise">
+    <section class="deck-page surprise" id="surprise" data-page-name="surprise" aria-hidden="true">
       <div class="word-intro">
         <p class="eyebrow"><i></i>03 / WRITE YOUR FEELING</p>
         <h2>写下一个词，<br />收下一句让你<em>心动的话。</em></h2>
@@ -122,7 +123,7 @@
       <button class="next-page" data-next="about" type="button"><span>认识我们</span><i>↓</i></button>
     </section>
 
-    <section class="page about" id="about" data-page-name="about">
+    <section class="deck-page about" id="about" data-page-name="about" aria-hidden="true">
       <div class="about-head">
         <p class="eyebrow"><i></i>04 / ABOUT & SERVICE</p>
         <h2>下单之前，<br />你可能还想知道这些。</h2>
@@ -157,6 +158,7 @@
         </div>
       </div>
       <footer><span>愿每一次落笔，都离想成为的自己更近一点。</span><span>© <b id="year"></b> 片刻文具局</span></footer>
+    </section>
     </section>
   </main>
 
