@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="cover-active">
   <canvas id="lake" aria-hidden="true"></canvas>
   <div class="grain" aria-hidden="true"></div>
 
@@ -33,6 +33,13 @@
   </nav>
 
   <main>
+    <section class="page cover-page" id="cover" data-page-name="cover" aria-label="网站封面">
+      <img class="cover-image" src="assets/cover-art.jpg" alt="阡陌创作的山水、人物与文具组合画面" />
+      <button class="cover-enter" data-next="home" type="button" aria-label="进入片刻文具局">
+        <i>→</i><span>进入网站</span>
+      </button>
+    </section>
+
     <section class="page hero" id="home" data-page-name="home">
       <div class="hero-copy">
         <p class="eyebrow"><i></i>STUDY IN YOUR OWN COLOR</p>
@@ -47,16 +54,9 @@
           <span>误差不会超过五分钟。<button id="verifyButton" type="button">看看准不准</button></span>
         </div>
       </div>
-      <div class="desk-art" id="deskArt">
-        <div class="paper art-book" id="artBook">
-          <button class="book-front" id="artBookButton" type="button" aria-expanded="false" aria-label="打开纸页查看阡陌的画">
-            <span>MAKE<br />TODAY<br /><b>COUNT.</b></span><i></i><i></i><i></i><small>轻触翻开</small>
-          </button>
-          <div class="book-inside">
-            <img src="assets/person-standing-v4.png" alt="穿黑色服装和橙色围巾的站立人物画作" />
-          </div>
-        </div>
-        <p class="art-hint">点击纸页，或将鼠标移到这里</p>
+      <div class="desk-art" aria-hidden="true">
+        <div class="paper"><span>MAKE<br />TODAY<br /><b>COUNT.</b></span><i></i><i></i><i></i></div>
+        <div class="pen"></div><div class="clip"></div><div class="note">今天也<br />有在前进</div>
       </div>
       <button class="next-page" data-next="products" type="button"><span>看看本周新品</span><i>↓</i></button>
       <p class="scroll-hint">滚动鼠标 · 一页一页探索</p>
