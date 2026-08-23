@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b1e27" />
+  <meta name="description" content="片刻文具局——为 15–25 岁年轻人准备的高颜值学习文具与灵感好物。" />
+  <title>片刻文具局 · 把灵感写进日常</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="lake" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header>
+    <button class="logo" data-page="home" type="button"><span>◌</span>片刻文具局</button>
+    <div class="header-actions">
+      <span id="statusText">正在感知此刻</span>
+      <button class="music-button" id="musicButton" type="button" aria-pressed="false">
+        <i class="bars"><b></b><b></b><b></b></i><span>唤醒声音</span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="page-nav" aria-label="页面快速导航">
+    <button class="page-dot active" data-page="home" aria-current="page"><span>01</span><i></i><b>开场</b></button>
+    <button class="page-dot" data-page="products"><span>02</span><i></i><b>新品</b></button>
+    <button class="page-dot" data-page="surprise"><span>03</span><i></i><b>惊喜</b></button>
+    <button class="page-dot" data-page="about"><span>04</span><i></i><b>关于</b></button>
+  </nav>
+
+  <main>
+    <section class="page hero" id="home" data-page-name="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><i></i>STUDY IN YOUR OWN COLOR</p>
+        <h1>先别急着学习，<br /><em>让我猜猜你几点来的。</em></h1>
+        <p class="lead">欢迎来到片刻文具局。这里收集好写、好看，也能让书桌变得更有趣的学习搭子。</p>
+
+        <button class="reveal" id="revealButton" type="button"><span>让我猜猜</span><i>↗</i></button>
+        <div class="prediction" id="prediction" aria-live="polite" aria-hidden="true">
+          <small>你抵达这里的时间，大概是</small>
+          <p id="guessDate"></p>
+          <div><strong id="guessTime"></strong><em id="periodText"></em></div>
+          <span>误差不会超过五分钟。<button id="verifyButton" type="button">看看准不准</button></span>
+        </div>
+      </div>
+      <div class="desk-art" aria-hidden="true">
+        <div class="paper"><span>MAKE<br />TODAY<br /><b>COUNT.</b></span><i></i><i></i><i></i></div>
+        <div class="pen"></div><div class="clip"></div><div class="note">今天也<br />有在前进</div>
+      </div>
+      <button class="next-page" data-next="products" type="button"><span>看看本周新品</span><i>↓</i></button>
+      <p class="scroll-hint">滚动鼠标 · 一页一页探索</p>
+    </section>
+
+    <section class="page products" id="products" data-page-name="products">
+      <div class="products-head">
+        <div><p class="eyebrow"><i></i>02 / WEEKLY DROP</p><h2>这周，给书桌<br /><em>换一点新鲜感。</em></h2></div>
+        <p>不只是工具，也是你学习状态的一部分。<br />为高频使用与随手出片而设计。</p>
+      </div>
+      <div class="product-grid">
+        <article class="product-card lilac">
+          <div class="card-top"><span>01</span><button class="heart" type="button" aria-label="收藏雾紫速写套装">♡</button></div>
+          <div class="pen-set" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="product-info"><div><small>雾紫速写套装</small><h3>不费力，也能写得漂亮</h3></div><strong>¥29.9</strong></div>
+        </article>
+        <article class="product-card mint">
+          <div class="card-top"><span>02 / 人气</span><button class="heart" type="button" aria-label="收藏透明计划本">♡</button></div>
+          <div class="book" aria-hidden="true"><i></i><b>MAKE<br />TODAY<br />COUNT.</b></div>
+          <div class="product-info"><div><small>透明计划本</small><h3>把大目标，拆成今天这一格</h3></div><strong>¥36.0</strong></div>
+        </article>
+        <article class="product-card peach">
+          <div class="card-top"><span>03</span><button class="heart" type="button" aria-label="收藏情绪便利贴">♡</button></div>
+          <div class="notes" aria-hidden="true"><i>今天也<br />有在前进</i><i>别忘了<br />休息</i><i>IDEA!</i></div>
+          <div class="product-info"><div><small>情绪便利贴</small><h3>把灵感贴在看得见的地方</h3></div><strong>¥16.8</strong></div>
+        </article>
+      </div>
+      <button class="next-page dark" data-next="surprise" type="button"><span>领取今日惊喜</span><i>↓</i></button>
+    </section>
+
+    <section class="page surprise" id="surprise" data-page-name="surprise">
+      <p class="eyebrow"><i></i>03 / A LITTLE SURPRISE</p>
+      <div class="surprise-copy">
+        <h2>认真学习之外，<br />也给生活留一点<em>随机掉落。</em></h2>
+        <p>点开右边的球，会随机收到一句今日签。我们相信：一件顺手的文具，加上一点被照顾的心情，足以让开始变得容易。</p>
+      </div>
+      <button class="orb" id="surpriseOrb" type="button"><span>点我</span><small>收下一点偶然</small></button>
+      <button class="next-page" data-next="about" type="button"><span>认识我们</span><i>↓</i></button>
+    </section>
+
+    <section class="page about" id="about" data-page-name="about">
+      <div class="about-head">
+        <p class="eyebrow"><i></i>04 / ABOUT & SERVICE</p>
+        <h2>下单之前，<br />你可能还想知道这些。</h2>
+      </div>
+      <div class="tabs-layout">
+        <div class="tabs" role="tablist" aria-label="信息分类">
+          <button class="tab active" data-tab="contact" role="tab" aria-selected="true">联系方式</button>
+          <button class="tab" data-tab="statement" role="tab" aria-selected="false">产品声明</button>
+          <button class="tab" data-tab="address" role="tab" aria-selected="false">收货地址</button>
+          <button class="tab" data-tab="audience" role="tab" aria-selected="false">适合谁</button>
+        </div>
+        <div class="panels">
+          <article class="panel active" data-panel="contact">
+            <p class="kicker">CUSTOMER SERVICE</p><h3>选文具遇到困难？<br />随时来问我们。</h3>
+            <dl><div><dt>电话</dt><dd><a href="tel:13800000000">138 0000 0000</a></dd></div><div><dt>邮箱</dt><dd><a href="mailto:hello@example.com">hello@example.com</a></dd></div><div><dt>微信</dt><dd>MomentStationery</dd></div></dl>
+            <small class="notice">以上为演示信息，请替换为真实联系方式。</small>
+          </article>
+          <article class="panel" data-panel="statement" hidden>
+            <p class="kicker">PRODUCT NOTES</p><h3>好看要紧，<br />安全和好用更要紧。</h3>
+            <p class="body-copy">页面中的时间“预测”仅使用设备本地时间，不会上传或保存。文具图片与价格目前为演示信息；正式销售时请补充材质、尺寸、适用年龄、执行标准、退换货规则及实际库存。</p>
+          </article>
+          <article class="panel" data-panel="address" hidden>
+            <p class="kicker">RETURN ADDRESS</p><h3>退换货寄到这里，<br />我们会认真接收。</h3>
+            <address>中国 · 某某省某某市<br />创意街区 88 号，片刻文具局售后部<br />邮编：000000</address>
+            <button class="copy" id="copyAddress" type="button">复制完整地址</button>
+            <small class="notice">此处为演示地址，公开页面请勿填写私人住宅地址。</small>
+          </article>
+          <article class="panel" data-panel="audience" hidden>
+            <p class="kicker">MADE FOR YOU</p><h3>学习很具体，<br />喜欢也可以很个人。</h3>
+            <div class="tags"><span>初高中学生</span><span>大学生</span><span>备考人</span><span>手账爱好者</span><span>视觉体验控</span><span>15–25 岁新青年</span></div>
+          </article>
+        </div>
+      </div>
+      <footer><span>愿每一次落笔，都离想成为的自己更近一点。</span><span>© <b id="year"></b> 片刻文具局</span></footer>
+    </section>
+  </main>
+
+  <aside class="music-drawer" id="musicDrawer" aria-hidden="true">
+    <button class="drawer-close" id="drawerClose" type="button" aria-label="关闭音乐面板">×</button>
+    <p class="kicker">NOW PLAYING</p><h3 id="trackName">湖面的呼吸</h3><p id="trackMeta">由浏览器现场生成的氛围音</p>
+    <div class="music-controls"><button id="prevTrack">←</button><button class="play" id="playTrack">Ⅱ</button><button id="nextTrack">→</button></div>
+    <label class="local-music"><input id="musicFiles" type="file" accept="audio/*" multiple /><span>＋ 选择你自己的音乐</span></label>
+    <small>歌曲会自动随机排序，文件只在本机播放，不会上传。浏览器要求首次播放由你点击授权。</small>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
